@@ -12,7 +12,9 @@ const placeholderImage = "https://via.placeholder.com/150";
 const Checkout = () => {
   const {
     cartItems,
-    loadingCartItems
+    loadingCartItems,
+    clearCart,
+
   } = useCart();
   const [productsData, setProductsData] = useState([]);
   const [loadingProducts, setLoadingProducts] = useState(true);
@@ -188,6 +190,7 @@ const Checkout = () => {
     } catch (error) {
       console.error("Error confirming order:", error.message);
     } finally {
+        
       setIsSubmitting(false);
     }
   };
